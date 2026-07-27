@@ -1,0 +1,86 @@
+Octavian Vacarciuc
+Senior PHP Engineer
+Chisinau, Moldova | +373 692 418 04 | octavian.vacarciuc@gmail.com | linkedin.com/in/octavian-
+vacarciuc
+
+PROFESSIONAL SUMMARY
+Senior PHP Engineer and Team Lead with 10+ years of experience building scalable backend
+systems for SaaS, e-commerce, logistics and telecom products. Expert in PHP 8, Laravel, MySQL,
+PostgreSQL, Elasticsearch and microservice architecture. Led backend teams of up to 8 engineers,
+delivered startup MVPs for US and UK clients, and optimized databases processing up to 1 billion
+rows per day.
+
+KEY SKILLS
+PHP 8, Laravel, MySQL, PostgreSQL, Elasticsearch (ELK), Redis, RabbitMQ, Apache Kafka,
+Docker, REST API, Microservices, AWS (Amazon Web Services), CI/CD, Git, ClaudeCode, Opencode
+
+PROFESSIONAL EXPERIENCE
+Backend Laravel Developer
+Route4ME (SaaS route optimization platform), Remote
+2025 - Present
+- Built and maintained REST APIs and microservices within an 8-person backend team for a high-
+scale route optimization SaaS platform.
+- Designed and shipped a universal query builder library: a driver-agnostic abstraction layer
+supporting MySQL, Elasticsearch and custom drivers, adopted team-wide as a core internal tool.
+- Implemented a high-load data layer using Elasticsearch full-text search, Redis caching, Google
+Cloud Datastore and Google Spanner for distributed relational workloads.
+- Covered new features with automated tests and containerized services in Docker, ensuring
+identical dev and production environments.
+PHP Team Lead and Backend Engineer
+WebRocks (IT outsourcing, HQ Netherlands), Chisinau, Moldova
+2021 - 2024
+- Led a backend team of 5 engineers: sprint planning, code review standards and retrospectives,
+reducing sprint blockers through proactive cross-team coordination.
+- Architected and delivered core modules of an academic SaaS platform (scheduling, internal
+messaging, timetables, task tracking) used by 1,000+ end users.
+- Upgraded a CRM system for a Dutch salon chain with cashier workflows (shift management,
+payment flows), cutting average transaction processing steps by 40%.
+- Refactored a legacy e-commerce codebase, improving API response times and enabling safe
+parallel feature development.
+Senior Full-Stack Engineer
+WorkIT / Dispatch42 (logistics technology), Chisinau, Moldova
+2019 - 2021
+- Developed a real-time route calculation engine for freight dispatchers, computing optimal routes
+and toll costs across multiple jurisdictions with geo-mapping integration.
+- Built a document management system and in-app chat supporting high-throughput dispatcher
+workflows and shipment record-keeping.
+- Delivered web service infrastructure handling concurrent dispatcher sessions with low-latency data
+retrieval.
+Senior Software Engineer
+Ideaction.io (IT outsourcing, US and UK clients), Chisinau, Moldova
+2017 - 2019
+- Delivered 3+ startup MVPs from zero to production in under 6 months each, working directly with
+US and UK product owners in an async-first environment.
+- Implemented real-time 1:1 and group chat and WebRTC-based video calling across multiple
+products.- Integrated the AWS stack (EC2, S3, API Gateway, Lambda) for a serverless-ready, cost-efficient
+backend architecture.
+- Built an AR indoor navigation system using Bluetooth beacon triangulation, which became a key
+product differentiator.
+- Mentored 2 mid-level mobile developers (Android, iOS) and aligned engineering work with product
+roadmap milestones.
+PHP Developer
+Unifun (telecom solutions, 75+ countries), Chisinau, Moldova
+2017
+- Optimized database query performance for tables processing up to 1 billion rows per day in a high-
+load telecom environment.
+- Parsed and adapted mobile network traffic (tShark) to country-specific mobile operator protocols
+across 10+ markets.
+- Provided 24/7 on-call incident response, resolving system overloads under SLA pressure.
+Software Engineer
+Titanium Software, Chisinau, Moldova
+2015 - 2017
+- Developed and supported PHP and MySQL web applications, moving from junior to independent
+feature ownership.
+Junior Software Engineer
+EBS Integrator, Chisinau, Moldova
+2014 - 2015
+- Built backend features in PHP and MySQL and fixed defects in client web projects under senior
+supervision.
+
+EDUCATION
+Bachelor of Information Technology, UPSC, Chisinau, Moldova, 2014 - 2017
+College of Information Technology, CEITI, Chisinau, Moldova, 2010 - 2014
+
+LANGUAGES
+Romanian - Native; Russian - C2; English - B2; Italian - A1
+
