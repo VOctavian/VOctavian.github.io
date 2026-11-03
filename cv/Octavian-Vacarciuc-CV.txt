@@ -1,86 +1,115 @@
 Octavian Vacarciuc
-Senior PHP Engineer
-Chisinau, Moldova | +373 692 418 04 | octavian.vacarciuc@gmail.com | linkedin.com/in/octavian-
-vacarciuc
+Senior Backend Engineer (PHP, Laravel)
+Chisinau, Moldova | +373 692 418 04 | octavian.vacarciuc@gmail.com | linkedin.com/in/octavian-vacarciuc
+Romanian (EU) citizen, authorized to work in the EU without visa sponsorship
 
-PROFESSIONAL SUMMARY
-Senior PHP Engineer and Team Lead with 10+ years of experience building scalable backend
-systems for SaaS, e-commerce, logistics and telecom products. Expert in PHP 8, Laravel, MySQL,
-PostgreSQL, Elasticsearch and microservice architecture. Led backend teams of up to 8 engineers,
-delivered startup MVPs for US and UK clients, and optimized databases processing up to 1 billion
-rows per day.
+SUMMARY
+Senior Backend Engineer with 12 years of experience in PHP and Laravel, building microservices and
+REST APIs for SaaS, logistics, e-commerce and telecom. Strong in MySQL, PostgreSQL, Elasticsearch,
+Redis, RabbitMQ, Docker, Kubernetes and AWS/GCP. Led backend teams of up to 5 and optimized
+databases processing up to 1B rows per day.
 
-KEY SKILLS
-PHP 8, Laravel, MySQL, PostgreSQL, Elasticsearch (ELK), Redis, RabbitMQ, Apache Kafka,
-Docker, REST API, Microservices, AWS (Amazon Web Services), CI/CD, Git, ClaudeCode, Opencode
+EXPERIENCE
 
-PROFESSIONAL EXPERIENCE
 Backend Laravel Developer
-Route4ME (SaaS route optimization platform), Remote
-2025 - Present
-- Built and maintained REST APIs and microservices within an 8-person backend team for a high-
-scale route optimization SaaS platform.
-- Designed and shipped a universal query builder library: a driver-agnostic abstraction layer
-supporting MySQL, Elasticsearch and custom drivers, adopted team-wide as a core internal tool.
-- Implemented a high-load data layer using Elasticsearch full-text search, Redis caching, Google
-Cloud Datastore and Google Spanner for distributed relational workloads.
-- Covered new features with automated tests and containerized services in Docker, ensuring
-identical dev and production environments.
-PHP Team Lead and Backend Engineer
-WebRocks (IT outsourcing, HQ Netherlands), Chisinau, Moldova
-2021 - 2024
-- Led a backend team of 5 engineers: sprint planning, code review standards and retrospectives,
-reducing sprint blockers through proactive cross-team coordination.
-- Architected and delivered core modules of an academic SaaS platform (scheduling, internal
-messaging, timetables, task tracking) used by 1,000+ end users.
-- Upgraded a CRM system for a Dutch salon chain with cashier workflows (shift management,
-payment flows), cutting average transaction processing steps by 40%.
-- Refactored a legacy e-commerce codebase, improving API response times and enabling safe
-parallel feature development.
+Route4Me | Remote | 01/2025 - 09/2026
+SaaS route optimization platform, 150+ employees worldwide
+- Worked within an 8-person backend team building and maintaining microservices and internal
+  libraries for a high-scale route optimization SaaS product.
+- Designed and shipped a universal query builder library: a driver-agnostic abstraction layer with
+  2 built-in drivers (MySQL, Elasticsearch) and support for custom drivers via a unified interface,
+  adopted across the team as a core internal tool.
+- Built and maintained REST APIs and microservices on top of 4 data stores: Elasticsearch full-text
+  search, Redis caching, Google Cloud Datastore, and Google Spanner for distributed relational
+  workloads.
+- Covered new features with automated PHPUnit tests following TDD and containerized services in
+  Docker, ensuring consistent environments across dev and production deployments.
+Stack: PHP 8.x, Laravel, MySQL, PostgreSQL, Elasticsearch, Redis, Google Cloud Datastore,
+Google Spanner, RabbitMQ, Docker, Kubernetes, GCP, GitHub Actions, PHPUnit
+
+PHP Team Lead & Backend Engineer
+WebRocks | Chisinau, Moldova | 03/2021 - 11/2024
+Outsourcing company, HQ in the Netherlands
+- Led a backend team of 5, running weekly planning and retrospectives that reduced sprint blockers
+  by ~50% through proactive coordination of cross-team dependencies.
+- Architected and delivered core features for an academic SaaS platform (appointment scheduling,
+  internal messaging, class timetables, task tracking) used by 1,000+ end users.
+- Upgraded a Dutch salon-chain CRM with cashier-specific workflows (shift management, payment
+  flows), cutting average transaction processing steps by 40%.
+- Refactored an e-commerce platform codebase, improving response times by ~30% and enabling safe
+  parallel feature development through standardized code review processes.
+Stack: PHP, Laravel, Vue.js, Node.js, MySQL, PostgreSQL, Redis, Memcached, RabbitMQ, Docker, AWS,
+GitHub Actions, WebSockets, PHPUnit, Sentry
+
 Senior Full-Stack Engineer
-WorkIT / Dispatch42 (logistics technology), Chisinau, Moldova
-2019 - 2021
-- Developed a real-time route calculation engine for freight dispatchers, computing optimal routes
-and toll costs across multiple jurisdictions with geo-mapping integration.
-- Built a document management system and in-app chat supporting high-throughput dispatcher
-workflows and shipment record-keeping.
-- Delivered web service infrastructure handling concurrent dispatcher sessions with low-latency data
-retrieval.
+WorkIT / Dispatch42 | Chisinau, Moldova | 06/2019 - 02/2021
+Logistics technology
+- Built a real-time route calculation engine for freight dispatchers, computing optimal routes and
+  toll costs across multiple jurisdictions with geo-mapping integration.
+- Developed document management and in-app chat systems supporting high-throughput dispatcher
+  workflows and critical shipment record-keeping.
+- Delivered web service infrastructure handling concurrent dispatcher sessions with low-latency
+  data retrieval.
+Stack: PHP, Laravel, Vue.js, Node.js, MySQL, Redis, RabbitMQ, Docker, AWS, WebSockets
+
 Senior Software Engineer
-Ideaction.io (IT outsourcing, US and UK clients), Chisinau, Moldova
-2017 - 2019
+Ideaction.io | Chisinau, Moldova | 10/2017 - 05/2019
+Outsourcing company, US and UK clients
 - Delivered 3+ startup MVPs from zero to production in under 6 months each, working directly with
-US and UK product owners in an async-first environment.
-- Implemented real-time 1:1 and group chat and WebRTC-based video calling across multiple
-products.- Integrated the AWS stack (EC2, S3, API Gateway, Lambda) for a serverless-ready, cost-efficient
-backend architecture.
-- Built an AR indoor navigation system using Bluetooth beacon triangulation, which became a key
-product differentiator.
-- Mentored 2 mid-level mobile developers (Android, iOS) and aligned engineering work with product
-roadmap milestones.
-PHP Developer
-Unifun (telecom solutions, 75+ countries), Chisinau, Moldova
-2017
-- Optimized database query performance for tables processing up to 1 billion rows per day in a high-
-load telecom environment.
-- Parsed and adapted mobile network traffic (tShark) to country-specific mobile operator protocols
-across 10+ markets.
-- Provided 24/7 on-call incident response, resolving system overloads under SLA pressure.
-Software Engineer
-Titanium Software, Chisinau, Moldova
-2015 - 2017
-- Developed and supported PHP and MySQL web applications, moving from junior to independent
-feature ownership.
+  US and UK product owners in an async-first environment.
+- Implemented real-time 1:1 and group chat over WebSockets and WebRTC-based video calling across
+  multiple products.
+- Integrated AWS stack (EC2, S3, API Gateway, Lambda) for serverless-ready, cost-efficient backend
+  architecture.
+- Built an AR indoor navigation system using Bluetooth beacon triangulation, a novel UX feature
+  that became a key product differentiator.
+- Managed and mentored 2 mid-level mobile developers (Android/iOS), aligning engineering work with
+  product roadmap milestones.
+Stack: PHP, Laravel, Vue.js, Node.js, Python, MySQL, PostgreSQL, Redis, RabbitMQ, Docker, Nginx,
+AWS (EC2, S3, Lambda, API Gateway), WebSockets, WebRTC
+
+Mid-level PHP Developer
+Unifun | Chisinau, Moldova | 10/2016 - 09/2017
+Telecom solutions, 75+ countries
+- Optimized database query performance for tables processing up to 1 billion rows per day in a
+  high-load telecom environment.
+- Parsed and adapted mobile network traffic (tShark, Wireshark) to meet country-specific operator
+  protocols across 10+ markets.
+- Provided 24/7 on-call incident response, remotely resolving system overloads and briefing
+  monitoring teams under SLA pressure.
+Stack: PHP, Go, MySQL, PostgreSQL, Redis, Memcached, RabbitMQ, Linux, Bash, tShark, Wireshark
+
 Junior Software Engineer
-EBS Integrator, Chisinau, Moldova
-2014 - 2015
-- Built backend features in PHP and MySQL and fixed defects in client web projects under senior
-supervision.
+Titanium Software | Chisinau, Moldova | 06/2015 - 09/2016
+Stack: PHP, Laravel, JavaScript, MySQL
+
+Junior Software Engineer
+EBS Integrator | Chisinau, Moldova | 03/2014 - 05/2015
+Stack: PHP, Laravel, JavaScript, MySQL
+
+TECHNICAL SKILLS
+Programming Languages: PHP 8.x, Go, Python 3, JavaScript, Bash
+Frameworks & Runtimes: Laravel, Eloquent ORM, Laravel Queues, Laravel Sanctum, Laravel Passport,
+Laravel Horizon, Laravel Telescope, Vue.js, Node.js
+PHP Tooling & Testing: Composer, PSR, PHPStan, PHPUnit, Selenium
+Databases & Search: MySQL, PostgreSQL, Redis, Elasticsearch, Memcached, Google Spanner,
+Google Cloud Datastore
+Cloud: Google Cloud Platform (GCP), AWS (EC2, S3, Lambda, API Gateway)
+Infrastructure & CI/CD: Docker, Kubernetes, Nginx, Linux, CI/CD, GitHub Actions, GitLab CI
+Messaging & Real-Time: Kafka, RabbitMQ, WebSockets, WebRTC
+APIs & Security: REST, OpenAPI/Swagger, OAuth2, JWT, Webhooks
+Monitoring: Prometheus, Grafana, Sentry, ELK Stack
+Architecture & Practices: Microservices, SOLID, DDD, Event-Driven Architecture, CQRS, TDD,
+Agile/Scrum, Code Review
+AI Tools: Claude Code, Codex, OpenCode, Ollama, Local LLMs
+Other Tools: Git, Jira, tShark, Wireshark
 
 EDUCATION
-Bachelor of Information Technology, UPSC, Chisinau, Moldova, 2014 - 2017
-College of Information Technology, CEITI, Chisinau, Moldova, 2010 - 2014
+Bachelor of Information Technology | UPSC, Chisinau | 2014 - 2017
+College of Information Technology | CEITI, Chisinau | 2010 - 2014
 
 LANGUAGES
-Romanian - Native; Russian - C2; English - B2; Italian - A1
-
+Romanian (Native), Russian (C2), English (B2), Italian (A1)
+
+INTERESTS
+Travel, Fishing, BBQ, Cooking, 3D Printing

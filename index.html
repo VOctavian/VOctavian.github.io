@@ -3,655 +3,679 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Octavian Vacarciuc — Senior PHP Engineer</title>
-<meta name="description" content="Senior PHP Engineer &amp; Team Lead. 10+ years building scalable backend systems, APIs and data layers that stay fast under load.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<title>Octavian Vacarciuc — Senior Backend Engineer (PHP, Laravel)</title>
+<meta name="description" content="Senior Backend Engineer with 12 years of experience in PHP and Laravel: microservices, REST APIs and data layers for SaaS, logistics, e-commerce and telecom. EU citizen, open to remote.">
+<meta name="author" content="Octavian Vacarciuc">
+<link rel="canonical" href="https://voctavian.github.io/">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://voctavian.github.io/">
+<meta property="og:title" content="Octavian Vacarciuc — Senior Backend Engineer (PHP, Laravel)">
+<meta property="og:description" content="12 years building backend systems that stay fast under load. EU citizen, open to remote.">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#F5F3EE" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F1513" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%232E7D6B'/><text x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-size='30' fill='%23fff'>OV</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Octavian Vacarciuc",
+  "jobTitle": "Senior Backend Engineer",
+  "url": "https://voctavian.github.io/",
+  "email": "mailto:octavian.vacarciuc@gmail.com",
+  "address": { "@type": "PostalAddress", "addressLocality": "Chisinau", "addressCountry": "MD" },
+  "sameAs": ["https://linkedin.com/in/octavian-vacarciuc", "https://t.me/MalckolMD"],
+  "knowsAbout": ["PHP", "Laravel", "Microservices", "REST APIs", "MySQL", "PostgreSQL", "Elasticsearch", "Redis", "RabbitMQ", "Docker", "Kubernetes", "AWS", "Google Cloud Platform"]
+}
+</script>
+<script>
+  // apply a saved theme before first paint so there is no flash
+  try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  document.documentElement.classList.add('js');
+</script>
 <style>
-:root{
-  --bg:#07080d;
-  --bg-2:#0c0e16;
-  --panel:rgba(255,255,255,.028);
-  --line:rgba(255,255,255,.09);
-  --txt:#e8eaf2;
-  --dim:#8b91a7;
-  --dimmer:#5c6379;
-  --acc:#7c5cff;      /* violet */
-  --acc-2:#22d3ee;    /* cyan   */
-  --acc-3:#f59e0b;    /* amber  */
-  --ok:#34d399;
-  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-  --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-  --max:1120px;
+:root {
+  --bg: #F5F3EE;
+  --surface: #FFFFFF;
+  --ink: #141C1A;
+  --text: #2B3735;
+  --muted: #5A6763;
+  --line: #E1DED6;
+  --accent: #2E7D6B;
+  --accent-soft: #E2EEE9;
+  --accent-ink: #1F5C4E;
+  --serif: "DM Serif Display", Georgia, serif;
+  --sans: "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --max: 1080px;
+  color-scheme: light;
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;background:var(--bg);color:var(--txt);font-family:var(--sans);
-  -webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.6;
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F1513;
+    --surface: #161E1B;
+    --ink: #EEF2F0;
+    --text: #C9D2CF;
+    --muted: #8E9C98;
+    --line: #26312D;
+    --accent: #5CC2A6;
+    --accent-soft: #17302A;
+    --accent-ink: #8EDBC5;
+    color-scheme: dark;
+  }
 }
-/* ---------- ambient background ---------- */
-.bg{position:fixed;inset:0;z-index:-2;pointer-events:none}
-.bg::before{
-  content:"";position:absolute;inset:0;
-  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
-  background-size:64px 64px;
-  mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,#000 20%,transparent 75%);
-  -webkit-mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,#000 20%,transparent 75%);
-  opacity:.55;
+:root[data-theme="dark"] {
+  --bg: #0F1513;
+  --surface: #161E1B;
+  --ink: #EEF2F0;
+  --text: #C9D2CF;
+  --muted: #8E9C98;
+  --line: #26312D;
+  --accent: #5CC2A6;
+  --accent-soft: #17302A;
+  --accent-ink: #8EDBC5;
+  color-scheme: dark;
 }
-.orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.30}
-.orb.a{width:620px;height:620px;background:var(--acc);top:-240px;left:-160px;animation:float 22s ease-in-out infinite}
-.orb.b{width:520px;height:520px;background:var(--acc-2);top:8%;right:-200px;animation:float 27s ease-in-out infinite reverse}
-.orb.c{width:460px;height:460px;background:#e11d92;bottom:6%;left:32%;opacity:.16;animation:float 32s ease-in-out infinite}
-@keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(50px,-40px) scale(1.12)}}
-#spark{position:fixed;inset:0;z-index:-1;pointer-events:none}
-.glow{position:fixed;width:520px;height:520px;border-radius:50%;pointer-events:none;z-index:0;
-  background:radial-gradient(circle,rgba(124,92,255,.10),transparent 62%);transform:translate(-50%,-50%);transition:opacity .4s}
 
-/* ---------- layout ---------- */
-.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 24px;position:relative;z-index:1}
-section{padding:104px 0;position:relative}
-.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--acc-2);margin:0 0 14px}
-.eyebrow::before{content:"// "}
-h2{font-size:clamp(28px,4.4vw,42px);line-height:1.14;letter-spacing:-.025em;margin:0 0 16px;font-weight:800}
-.lead{color:var(--dim);max-width:60ch;margin:0 0 48px;font-size:17px}
-
-/* ---------- nav ---------- */
-nav{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(14px);
-  background:rgba(7,8,13,0);border-bottom:1px solid transparent;transition:.35s}
-nav.on{background:rgba(7,8,13,.78);border-bottom-color:var(--line)}
-.nav-in{max-width:var(--max);margin:0 auto;padding:15px 24px;display:flex;align-items:center;gap:28px}
-.brand{font-family:var(--mono);font-weight:700;font-size:15px;letter-spacing:-.02em;text-decoration:none;color:var(--txt);white-space:nowrap}
-.brand b{color:var(--acc)}
-.nav-links{margin-left:auto;display:flex;gap:26px}
-.nav-links a{color:var(--dim);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s;position:relative}
-.nav-links a::after{content:"";position:absolute;left:0;bottom:-5px;height:1px;width:0;background:var(--acc-2);transition:width .25s}
-.nav-links a:hover{color:var(--txt)}.nav-links a:hover::after{width:100%}
-.nav-cta{padding:9px 18px;border-radius:999px;background:var(--txt);color:#07080d !important;font-weight:600;font-size:13.5px;text-decoration:none;transition:.2s;white-space:nowrap}
-.nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 26px rgba(255,255,255,.16)}
-@media(max-width:820px){.nav-links{display:none}}
-
-/* ---------- hero ---------- */
-.hero{min-height:100svh;display:flex;padding:110px 0 64px}
-/* margin:auto (not align-items) so tall content overflows downward instead of clipping the top */
-.hero>.wrap{margin-top:auto;margin-bottom:auto}
-.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center}
-@media(max-width:940px){.hero-grid{grid-template-columns:1fr;gap:40px}}
-.status{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:12px;color:var(--dim);
-  border:1px solid var(--line);background:var(--panel);padding:7px 15px;border-radius:999px;margin-bottom:26px}
-.dot{width:7px;height:7px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 rgba(52,211,153,.7);animation:pulse 2.2s infinite}
-@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(52,211,153,0)}100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}}
-h1{font-size:clamp(38px,5.6vw,64px);line-height:1.06;letter-spacing:-.04em;margin:0 0 18px;font-weight:800}
-h1 .grad{background:linear-gradient(105deg,var(--acc) 0%,var(--acc-2) 52%,var(--acc-3) 100%);
-  -webkit-background-clip:text;background-clip:text;color:transparent;background-size:220% auto;animation:shift 9s linear infinite}
-@keyframes shift{to{background-position:220% center}}
-.role{font-family:var(--mono);font-size:clamp(14px,2vw,17px);color:var(--acc-2);margin:0 0 22px;min-height:1.6em}
-.role .cursor{display:inline-block;width:8px;background:var(--acc-2);animation:blink 1s steps(2) infinite;margin-left:2px}
-@keyframes blink{50%{opacity:0}}
-.pitch{font-size:18px;color:var(--dim);max-width:52ch;margin:0 0 34px}
-.pitch b{color:var(--txt);font-weight:600}
-.btns{display:flex;gap:14px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 26px;border-radius:12px;text-decoration:none;
-  font-weight:600;font-size:15px;transition:.25s;border:1px solid transparent}
-.btn.p{background:linear-gradient(135deg,var(--acc),#5b3ee8);color:#fff;box-shadow:0 10px 34px rgba(124,92,255,.34)}
-.btn.p:hover{transform:translateY(-2px);box-shadow:0 16px 44px rgba(124,92,255,.5)}
-.btn.s{border-color:var(--line);color:var(--txt);background:var(--panel)}
-.btn.s:hover{border-color:var(--acc-2);color:var(--acc-2);transform:translateY(-2px)}
-
-/* ---------- terminal ---------- */
-.term{background:linear-gradient(180deg,#0d1018,#090b11);border:1px solid var(--line);border-radius:14px;
-  overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,.6);font-family:var(--mono);font-size:13px}
-.term-bar{display:flex;align-items:center;gap:7px;padding:11px 14px;background:rgba(255,255,255,.035);border-bottom:1px solid var(--line)}
-.tl{width:11px;height:11px;border-radius:50%}
-.tl.r{background:#ff5f57}.tl.y{background:#febc2e}.tl.g{background:#28c840}
-.term-name{margin-left:10px;font-size:11.5px;color:var(--dimmer)}
-.term-body{padding:18px 18px 22px;line-height:1.85;min-height:288px}
-.c-key{color:#c084fc}.c-str{color:#86efac}.c-num{color:#fbbf24}.c-fn{color:#67e8f9}.c-cm{color:var(--dimmer)}.c-var{color:#f0abfc}
-.term-body .ln{opacity:0;transform:translateY(4px);animation:ln .35s forwards}
-@keyframes ln{to{opacity:1;transform:none}}
-
-/* ---------- stats ---------- */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
-  border:1px solid var(--line);border-radius:16px;overflow:hidden}
-@media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
-.stat{background:#090b11;padding:30px 22px;text-align:center;transition:background .3s}
-.stat:hover{background:#0e1119}
-.stat .n{font-family:var(--mono);font-size:clamp(28px,4vw,40px);font-weight:700;letter-spacing:-.03em;
-  background:linear-gradient(135deg,var(--acc-2),var(--acc));-webkit-background-clip:text;background-clip:text;color:transparent}
-.stat .l{font-size:12.5px;color:var(--dim);margin-top:7px;letter-spacing:.03em}
-
-/* ---------- stack ---------- */
-.stack{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-@media(max-width:900px){.stack{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.stack{grid-template-columns:1fr}}
-.card{position:relative;border:1px solid var(--line);border-radius:16px;padding:26px 24px;background:var(--panel);
-  overflow:hidden;transition:.35s}
-.card::before{content:"";position:absolute;inset:0;border-radius:16px;padding:1px;opacity:0;transition:opacity .35s;
-  background:linear-gradient(135deg,var(--acc),var(--acc-2));
-  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
-.card:hover{transform:translateY(-4px);background:rgba(255,255,255,.05)}
-.card:hover::before{opacity:1}
-.card .ic{font-size:22px;margin-bottom:14px;display:block}
-.card h3{font-size:16px;margin:0 0 4px;font-weight:600;letter-spacing:-.01em}
-.card .sub{font-family:var(--mono);font-size:11px;color:var(--dimmer);margin:0 0 16px;letter-spacing:.05em;text-transform:uppercase}
-.tags{display:flex;flex-wrap:wrap;gap:7px}
-.tag{font-family:var(--mono);font-size:11.5px;padding:5px 10px;border-radius:7px;background:rgba(255,255,255,.05);
-  border:1px solid var(--line);color:var(--dim);transition:.2s;cursor:default}
-.tag:hover{color:var(--txt);border-color:var(--acc-2);background:rgba(34,211,238,.09);transform:translateY(-1px)}
-
-/* ---------- pipeline ---------- */
-.pipe-box{border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.008));
-  padding:34px 26px 26px;overflow-x:auto}
-.pipe-box svg{display:block;margin:0 auto;min-width:660px;max-width:100%;height:auto}
-.pipe-note{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}
-@media(max-width:760px){.pipe-note{grid-template-columns:repeat(2,1fr)}}
-.pn{border-left:2px solid var(--acc);padding-left:13px}
-.pn:nth-child(2){border-color:var(--acc-2)}.pn:nth-child(3){border-color:var(--acc-3)}.pn:nth-child(4){border-color:var(--ok)}
-.pn strong{display:block;font-size:13.5px;margin-bottom:3px}
-.pn span{font-size:12.5px;color:var(--dim)}
-
-/* ---------- timeline ---------- */
-.tline{position:relative;padding-left:34px}
-.tline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:1px;
-  background:linear-gradient(180deg,var(--acc),var(--acc-2) 45%,transparent)}
-.tnode{position:relative;padding-bottom:40px}
-.tnode:last-child{padding-bottom:0}
-.tnode::before{content:"";position:absolute;left:-31px;top:7px;width:9px;height:9px;border-radius:50%;
-  background:var(--bg);border:2px solid var(--acc);transition:.3s}
-.tnode:hover::before{background:var(--acc-2);border-color:var(--acc-2);box-shadow:0 0 0 5px rgba(34,211,238,.14)}
-.tyear{font-family:var(--mono);font-size:12px;color:var(--acc-3);letter-spacing:.08em}
-.tnode h3{font-size:19px;margin:5px 0 6px;font-weight:700;letter-spacing:-.015em}
-.tdomain{font-family:var(--mono);font-size:11.5px;color:var(--dimmer);text-transform:uppercase;letter-spacing:.1em;margin-bottom:11px}
-.tnode ul{margin:0;padding-left:17px;color:var(--dim);font-size:15px}
-.tnode li{margin-bottom:5px}
-.tnode li::marker{color:var(--acc)}
-
-/* ---------- how ---------- */
-.how{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-@media(max-width:760px){.how{grid-template-columns:1fr}}
-.principle{border:1px solid var(--line);border-radius:14px;padding:24px;background:var(--panel);transition:.3s;position:relative}
-.principle:hover{border-color:rgba(124,92,255,.5);background:rgba(124,92,255,.045)}
-.principle .num{font-family:var(--mono);font-size:11px;color:var(--acc);letter-spacing:.15em}
-.principle h3{font-size:17px;margin:9px 0 8px;font-weight:600;letter-spacing:-.015em}
-.principle p{margin:0;color:var(--dim);font-size:14.5px}
-
-/* ---------- langs ---------- */
-.langs{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-@media(max-width:700px){.langs{grid-template-columns:repeat(2,1fr)}}
-.lang{border:1px solid var(--line);border-radius:14px;padding:20px;background:var(--panel)}
-.lang .lname{font-weight:600;font-size:15px;display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
-.lang .lvl{font-family:var(--mono);font-size:11px;color:var(--acc-2)}
-.bar{height:4px;border-radius:99px;background:rgba(255,255,255,.08);overflow:hidden}
-.bar i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--acc),var(--acc-2));transition:width 1.3s cubic-bezier(.2,.8,.2,1)}
-
-/* ---------- contact ---------- */
-.cta-box{border:1px solid var(--line);border-radius:22px;padding:60px 44px;text-align:center;position:relative;overflow:hidden;
-  background:radial-gradient(ellipse 80% 130% at 50% 0%,rgba(124,92,255,.16),transparent 68%),rgba(255,255,255,.02)}
-.cta-box h2{margin-bottom:12px}
-.cta-box p{color:var(--dim);max-width:46ch;margin:0 auto 34px}
-.links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-
-/* ---------- downloads ---------- */
-.dl{margin-top:44px;padding-top:34px;border-top:1px solid var(--line)}
-.dl-lbl{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--dimmer);margin-bottom:18px}
-.dl-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-.dl-btn{display:flex;align-items:center;gap:14px;text-decoration:none;text-align:left;
-  border:1px solid var(--line);background:rgba(255,255,255,.03);border-radius:14px;padding:14px 18px;
-  min-width:250px;transition:.25s}
-.dl-btn:hover{transform:translateY(-2px);border-color:var(--acc-2);background:rgba(34,211,238,.07)}
-.dl-ic{flex:none;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.06em;color:#fff;
-  background:linear-gradient(135deg,#e5484d,#b91c1c);padding:9px 9px;border-radius:9px}
-.dl-ic.txt{background:linear-gradient(135deg,var(--acc),#5b3ee8)}
-.dl-txt{display:flex;flex-direction:column;line-height:1.35}
-.dl-txt strong{font-size:14.5px;font-weight:600;color:var(--txt)}
-.dl-txt em{font-style:normal;font-family:var(--mono);font-size:11px;color:var(--dim);margin-top:2px}
-.dl-arr{margin-left:auto;color:var(--dimmer);font-size:17px;transition:.25s}
-.dl-btn:hover .dl-arr{color:var(--acc-2);transform:translateY(2px)}
-@media(max-width:560px){.dl-btn{min-width:100%}}
-footer{border-top:1px solid var(--line);padding:28px 0;margin-top:80px}
-.foot{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;color:var(--dimmer)}
-
-/* ---------- reveal ---------- */
-.rv{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
-.rv.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){
-  *{animation:none !important;transition-duration:.01ms !important}
-  .rv{opacity:1;transform:none}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
-::selection{background:var(--acc);color:#fff}
-::-webkit-scrollbar{width:10px}
-::-webkit-scrollbar-track{background:var(--bg)}
-::-webkit-scrollbar-thumb{background:#232838;border-radius:99px;border:2px solid var(--bg)}
-::-webkit-scrollbar-thumb:hover{background:var(--acc)}
+a { color: inherit; }
+::selection { background: var(--accent); color: var(--bg); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+/* ── NAV ── */
+.nav {
+  position: sticky; top: 0; z-index: 10;
+  background: color-mix(in srgb, var(--bg) 86%, transparent);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: border-color .2s;
+}
+.nav.scrolled { border-bottom-color: var(--line); }
+.nav-in { display: flex; align-items: center; gap: 24px; height: 64px; }
+.brand { font-family: var(--serif); font-size: 22px; color: var(--ink); text-decoration: none; white-space: nowrap; }
+.brand span { color: var(--accent); }
+.nav-links { display: flex; gap: 4px; margin-left: auto; }
+.nav-links a {
+  font-size: 15px; font-weight: 500; color: var(--muted); text-decoration: none;
+  padding: 6px 10px; border-radius: 8px; transition: color .15s, background .15s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--ink); background: var(--accent-soft); }
+.icon-btn {
+  display: grid; place-items: center; width: 38px; height: 38px; flex: none;
+  border: 1px solid var(--line); border-radius: 10px; background: var(--surface);
+  color: var(--ink); cursor: pointer;
+}
+.icon-btn svg { width: 18px; height: 18px; }
+.icon-btn .moon, :root[data-theme="dark"] .icon-btn .sun { display: none; }
+:root[data-theme="dark"] .icon-btn .moon { display: block; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .icon-btn .sun { display: none; }
+  :root:not([data-theme="light"]) .icon-btn .moon { display: block; }
+}
+
+/* ── BUTTONS ── */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font: 600 15px/1 var(--sans); text-decoration: none;
+  padding: 13px 20px; border-radius: 10px; border: 1px solid var(--line);
+  background: var(--surface); color: var(--ink);
+  transition: transform .15s, border-color .15s, background .15s;
+}
+.btn:hover { transform: translateY(-1px); border-color: var(--accent); }
+.btn.primary { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.btn.primary:hover { background: var(--accent); border-color: var(--accent); }
+.btn svg { width: 17px; height: 17px; flex: none; }
+.btn-sm { padding: 9px 14px; font-size: 14px; }
+
+/* ── HERO ── */
+.hero { padding: 72px 0 56px; }
+.hero-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 56px; align-items: center; }
+.status {
+  display: inline-flex; align-items: center; gap: 8px;
+  font: 500 13px/1 var(--mono); color: var(--accent-ink);
+  background: var(--accent-soft); padding: 8px 12px; border-radius: 99px;
+}
+.status::before {
+  content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent);
+  box-shadow: 0 0 0 0 var(--accent); animation: pulse 2.2s infinite;
+}
+@keyframes pulse { 70% { box-shadow: 0 0 0 8px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
+h1 {
+  font-family: var(--serif); font-weight: 400; color: var(--ink);
+  font-size: clamp(46px, 7.4vw, 86px); line-height: 1; letter-spacing: -.01em;
+  margin: 22px 0 14px;
+}
+h1 em { color: var(--accent); font-style: italic; }
+.role { font-size: clamp(19px, 2.4vw, 23px); font-weight: 600; color: var(--ink); margin: 0 0 16px; }
+.pitch { font-size: 18px; color: var(--muted); max-width: 54ch; margin: 0 0 30px; }
+.cta { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.spec {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 18px;
+  padding: 8px 22px; font-size: 15px;
+}
+.spec-row { display: flex; justify-content: space-between; gap: 16px; padding: 13px 0; border-bottom: 1px dashed var(--line); }
+.spec-row:last-child { border-bottom: 0; }
+.spec-row dt { font: 500 12px/1.9 var(--mono); text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.spec-row dd { margin: 0; text-align: right; font-weight: 600; color: var(--ink); }
+
+/* ── STATS ── */
+.stats {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+}
+.stat { padding: 28px 20px; border-left: 1px solid var(--line); }
+.stat:first-child { border-left: 0; padding-left: 0; }
+.stat b { display: block; font-family: var(--serif); font-weight: 400; font-size: 44px; line-height: 1.05; color: var(--ink); }
+.stat span { font-size: 15px; color: var(--muted); }
+
+/* ── SECTIONS ── */
+section { padding: 88px 0 0; }
+.kicker { font: 500 13px/1 var(--mono); text-transform: uppercase; letter-spacing: .12em; color: var(--accent); margin: 0 0 14px; }
+h2 {
+  font-family: var(--serif); font-weight: 400; color: var(--ink);
+  font-size: clamp(32px, 4.6vw, 46px); line-height: 1.1; margin: 0 0 14px;
+}
+.sub { color: var(--muted); max-width: 60ch; margin: 0 0 44px; }
+
+/* ── EXPERIENCE ── */
+.job {
+  display: grid; grid-template-columns: 230px 1fr; gap: 36px;
+  padding: 32px 0; border-top: 1px solid var(--line);
+}
+.job-meta { font-size: 15px; color: var(--muted); }
+.job-date { font: 500 14px/1.4 var(--mono); color: var(--accent); margin-bottom: 8px; }
+.job-co { font-weight: 700; color: var(--ink); font-size: 17px; }
+.job h3 { font-family: var(--serif); font-weight: 400; font-size: 27px; line-height: 1.2; color: var(--ink); margin: 0 0 4px; }
+.job-about { color: var(--muted); margin: 0 0 14px; font-size: 16px; }
+.job ul { margin: 0 0 16px; padding-left: 20px; }
+.job li { margin-bottom: 6px; }
+.job li::marker { color: var(--accent); }
+.job li strong { color: var(--ink); font-weight: 600; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; padding: 0; margin: 0; }
+.chips li {
+  font: 500 13px/1 var(--mono); color: var(--text);
+  background: var(--surface); border: 1px solid var(--line);
+  padding: 7px 10px; border-radius: 7px; margin: 0;
+}
+.job.compact { padding: 22px 0; }
+.job.compact h3 { font-size: 22px; margin-bottom: 10px; }
+
+/* ── SKILLS ── */
+.skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.skill-card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 22px;
+  transition: border-color .2s, transform .2s;
+}
+.skill-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.skill-card h3 { font-size: 17px; font-weight: 700; color: var(--ink); margin: 0 0 14px; }
+
+/* ── APPROACH ── */
+.principles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 48px; counter-reset: p; }
+.principle { padding: 26px 0 26px 64px; border-top: 1px solid var(--line); position: relative; }
+.principle::before {
+  counter-increment: p; content: "0" counter(p);
+  position: absolute; left: 0; top: 24px;
+  font-family: var(--serif); font-size: 34px; line-height: 1; color: var(--accent);
+}
+.principle h3 { font-size: 19px; font-weight: 700; color: var(--ink); margin: 0 0 6px; }
+.principle p { margin: 0; color: var(--muted); }
+
+/* ── ABOUT ── */
+.about { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 24px; }
+.panel h3 { font: 500 13px/1 var(--mono); text-transform: uppercase; letter-spacing: .1em; color: var(--accent); margin: 0 0 18px; }
+.panel p { margin: 0 0 14px; }
+.panel p:last-child { margin-bottom: 0; }
+.panel b { color: var(--ink); }
+.panel small { display: block; color: var(--muted); font-size: 14px; }
+.lang { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 7px 0; }
+.lang span:first-child { font-weight: 600; color: var(--ink); }
+.level { display: flex; gap: 4px; align-items: center; }
+.level i { width: 18px; height: 6px; border-radius: 3px; background: var(--line); }
+.level i.on { background: var(--accent); }
+.level em { font: 500 12px/1 var(--mono); font-style: normal; color: var(--muted); width: 50px; text-align: right; }
+
+/* ── CONTACT ── */
+.contact {
+  margin-top: 88px; padding: 64px 48px; border-radius: 24px;
+  background: var(--ink); color: var(--bg);
+}
+.contact h2 { color: var(--bg); max-width: 18ch; }
+.contact p { color: color-mix(in srgb, var(--bg) 70%, var(--ink)); max-width: 52ch; margin: 0 0 30px; }
+.contact .btn { background: transparent; color: var(--bg); border-color: color-mix(in srgb, var(--bg) 30%, var(--ink)); }
+.contact .btn:hover { border-color: var(--bg); }
+.contact .btn.primary { background: var(--bg); color: var(--ink); border-color: var(--bg); }
+.contact .btn.primary:hover { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+
+footer { padding: 36px 0 48px; color: var(--muted); font-size: 14px; }
+footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+footer a { color: var(--muted); }
+
+/* ── REVEAL ── */
+.js .rv { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+.js .rv.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .rv { opacity: 1; transform: none; transition: none; }
+  .status::before { animation: none; }
+  .btn, .skill-card { transition: none; }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 920px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 36px; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .stat:nth-child(3) { border-left: 0; padding-left: 0; }
+  .stat:nth-child(n+3) { border-top: 1px solid var(--line); }
+  .skills, .about { grid-template-columns: repeat(2, 1fr); }
+  .nav-links { display: none; }
+  .nav-in > .btn { margin-left: auto; }
+}
+@media (max-width: 680px) {
+  body { font-size: 16px; }
+  .wrap { padding: 0 16px; }
+  .hero { padding: 44px 0 40px; }
+  .job { grid-template-columns: 1fr; gap: 10px; }
+  .skills, .about, .principles { grid-template-columns: 1fr; }
+  .stat { padding: 20px 14px; }
+  .stat b { font-size: 34px; }
+  .contact { padding: 44px 22px; border-radius: 18px; margin-top: 64px; }
+  section { padding-top: 64px; }
+  .spec-row { flex-direction: column; gap: 2px; }
+  .spec-row dd { text-align: left; }
+}
+@media (max-width: 400px) {
+  .nav-in > .btn span { display: none; }
+}
+
+/* ── PRINT ── */
+@media print {
+  .nav, .cta, .contact .cta { display: none; }
+  body { background: #fff; color: #000; font-size: 11pt; }
+  .js .rv { opacity: 1; transform: none; }
+  section { padding-top: 24px; }
+  .job { break-inside: avoid; }
+}
 </style>
 </head>
 <body>
 
-<div class="bg"><div class="orb a"></div><div class="orb b"></div><div class="orb c"></div></div>
-<canvas id="spark"></canvas>
-<div class="glow" id="glow"></div>
-
-<nav id="nav"><div class="nav-in">
-  <a class="brand" href="#top">octavian<b>.</b>vacarciuc<span style="color:var(--acc-2)">()</span></a>
-  <div class="nav-links">
-    <a href="#stack">Stack</a>
-    <a href="#build">How I build</a>
-    <a href="#journey">Journey</a>
-    <a href="#principles">Principles</a>
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top">Octavian <span>Vacarciuc</span></a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#approach">Approach</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-sm" href="cv/Octavian-Vacarciuc-CV.pdf" download>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 21h14"/></svg>
+      <span>CV</span>
+    </a>
+    <button class="icon-btn" id="theme" type="button" aria-label="Toggle dark mode">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4l1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    </button>
   </div>
-  <a class="nav-cta" href="mailto:octavian.vacarciuc@gmail.com">Let's talk</a>
-</div></nav>
+</header>
 
-<!-- ================= HERO ================= -->
-<section class="hero" id="top"><div class="wrap"><div class="hero-grid">
-  <div>
-    <div class="status"><span class="dot"></span> Open to senior backend &amp; lead roles · Remote</div>
-    <h1>I build backends<br>that <span class="grad">don't flinch</span><br>under load.</h1>
-    <p class="role" id="role"><span class="cursor">&nbsp;</span></p>
-    <p class="pitch">Senior PHP engineer and team lead — <b>10+ years</b> turning messy domains into clean APIs, fast queries and services that stay boring in production. From <b>zero-to-MVP</b> sprints to tables chewing through <b>a billion rows a day</b>.</p>
-    <div class="btns">
-      <a class="btn p" href="mailto:octavian.vacarciuc@gmail.com">✉ Start a conversation</a>
-      <a class="btn s" href="cv/Octavian-Vacarciuc-CV.pdf" download>↓&nbsp; Download CV</a>
-      <a class="btn s" href="https://t.me/MalckolMD" target="_blank" rel="noopener">✈&nbsp; Telegram</a>
-    </div>
-  </div>
+<main id="top">
 
-  <div class="term" id="term">
-    <div class="term-bar"><i class="tl r"></i><i class="tl y"></i><i class="tl g"></i><span class="term-name">~/engineer — php artisan tinker</span></div>
-    <div class="term-body" id="termBody"></div>
-  </div>
-</div></div></section>
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="status">Open to work · Remote or EU-based</span>
+        <h1>Octavian <em>Vacarciuc</em></h1>
+        <p class="role">Senior Backend Engineer — PHP, Laravel</p>
+        <p class="pitch">I build backend systems that stay fast and boring under load: microservices, REST APIs and data layers for SaaS, logistics, e-commerce and telecom.</p>
+        <div class="cta">
+          <a class="btn primary" href="mailto:octavian.vacarciuc@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            Get in touch
+          </a>
+          <a class="btn" href="cv/Octavian-Vacarciuc-CV.pdf" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 21h14"/></svg>
+            Download CV
+          </a>
+          <a class="btn" href="https://linkedin.com/in/octavian-vacarciuc" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.2c0-1.2 0-2.9-1.8-2.9s-2 1.4-2 2.8V21h-4z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
 
-<!-- ================= STATS ================= -->
-<section style="padding-top:0"><div class="wrap">
-  <div class="stats rv" id="stats">
-    <div class="stat"><div class="n" data-to="10" data-suffix="+">0</div><div class="l">Years shipping backend</div></div>
-    <div class="stat"><div class="n" data-to="8" data-suffix="">0</div><div class="l">Engineers led at peak</div></div>
-    <div class="stat"><div class="n" data-to="1" data-prefix="~" data-suffix="B">0</div><div class="l">Rows/day tuned for</div></div>
-    <div class="stat"><div class="n" data-to="5" data-suffix="">0</div><div class="l">Industries shipped in</div></div>
-  </div>
-</div></section>
-
-<!-- ================= STACK ================= -->
-<section id="stack"><div class="wrap">
-  <p class="eyebrow rv">the toolbox</p>
-  <h2 class="rv">Tools I reach for<br>without thinking.</h2>
-  <p class="lead rv">Not a logo wall. These are the things I've broken, fixed, profiled and shipped — grouped by the job they actually do.</p>
-
-  <div class="stack">
-    <div class="card rv"><span class="ic">🐘</span>
-      <h3>Core Runtime</h3><p class="sub">where the logic lives</p>
-      <div class="tags"><span class="tag">PHP 8</span><span class="tag">Laravel</span><span class="tag">OOP / SOLID</span><span class="tag">Testing</span><span class="tag">Legacy rescue</span></div>
-    </div>
-    <div class="card rv"><span class="ic">🗄️</span>
-      <h3>Data Layer</h3><p class="sub">the part that decides your latency</p>
-      <div class="tags"><span class="tag">MySQL</span><span class="tag">PostgreSQL</span><span class="tag">Query tuning</span><span class="tag">Indexing</span><span class="tag">Sharding-aware design</span></div>
-    </div>
-    <div class="card rv"><span class="ic">🔎</span>
-      <h3>Search &amp; Cache</h3><p class="sub">making big feel small</p>
-      <div class="tags"><span class="tag">Elasticsearch</span><span class="tag">ELK</span><span class="tag">Redis</span><span class="tag">Full-text</span><span class="tag">Cache strategy</span></div>
-    </div>
-    <div class="card rv"><span class="ic">📨</span>
-      <h3>Async &amp; Streams</h3><p class="sub">work that shouldn't block a request</p>
-      <div class="tags"><span class="tag">RabbitMQ</span><span class="tag">Apache Kafka</span><span class="tag">Queues</span><span class="tag">Event-driven</span><span class="tag">Retries &amp; DLQ</span></div>
-    </div>
-    <div class="card rv"><span class="ic">🧩</span>
-      <h3>Architecture</h3><p class="sub">seams in the right places</p>
-      <div class="tags"><span class="tag">REST API</span><span class="tag">Microservices</span><span class="tag">Abstraction layers</span><span class="tag">Domain modelling</span><span class="tag">Versioning</span></div>
-    </div>
-    <div class="card rv"><span class="ic">☁️</span>
-      <h3>Ship &amp; Run</h3><p class="sub">dev == prod, no surprises</p>
-      <div class="tags"><span class="tag">Docker</span><span class="tag">AWS</span><span class="tag">CI/CD</span><span class="tag">Git</span><span class="tag">Observability</span></div>
-    </div>
-    <div class="card rv"><span class="ic">🤖</span>
-      <h3>AI-Assisted Dev</h3><p class="sub">leverage, not autopilot</p>
-      <div class="tags"><span class="tag">Claude Code</span><span class="tag">Opencode</span><span class="tag">Agentic workflows</span><span class="tag">Review-first</span></div>
-    </div>
-    <div class="card rv"><span class="ic">🧭</span>
-      <h3>Leading</h3><p class="sub">the multiplier</p>
-      <div class="tags"><span class="tag">Team lead</span><span class="tag">Code review culture</span><span class="tag">Sprint planning</span><span class="tag">Mentoring</span><span class="tag">Async-first</span></div>
-    </div>
-    <div class="card rv"><span class="ic">🌍</span>
-      <h3>Domains</h3><p class="sub">contexts I speak fluently</p>
-      <div class="tags"><span class="tag">SaaS</span><span class="tag">E-commerce</span><span class="tag">Logistics</span><span class="tag">Telecom</span><span class="tag">Real-time</span></div>
+      <dl class="spec rv" aria-label="Quick facts">
+        <div class="spec-row"><dt>Based in</dt><dd>Chisinau, Moldova (UTC+2)</dd></div>
+        <div class="spec-row"><dt>Work rights</dt><dd>EU citizen (Romania) — no visa sponsorship needed</dd></div>
+        <div class="spec-row"><dt>Experience</dt><dd>12 years in PHP</dd></div>
+        <div class="spec-row"><dt>Focus</dt><dd>Backend, APIs, data layer</dd></div>
+        <div class="spec-row"><dt>Looking for</dt><dd>Senior Backend / Team Lead</dd></div>
+      </dl>
     </div>
   </div>
-</div></section>
 
-<!-- ================= PIPELINE ================= -->
-<section id="build"><div class="wrap">
-  <p class="eyebrow rv">how i build</p>
-  <h2 class="rv">A request, end to end.</h2>
-  <p class="lead rv">Most backend problems are the same shape: something arrives, something must be decided fast, and something heavy must happen later. Here's the skeleton I keep coming back to.</p>
-
-  <div class="pipe-box rv">
-    <svg viewBox="0 0 900 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Architecture diagram: client to API gateway, cache, database, search and queue workers">
-      <defs>
-        <linearGradient id="gl" x1="0" x2="1"><stop offset="0" stop-color="#7c5cff"/><stop offset="1" stop-color="#22d3ee"/></linearGradient>
-        <filter id="gw"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-        <style>
-          .bx{fill:rgba(255,255,255,.035);stroke:rgba(255,255,255,.16);rx:10}
-          .lbl{fill:#e8eaf2;font:600 13px "Inter",sans-serif;text-anchor:middle}
-          .sm{fill:#8b91a7;font:400 10.5px "JetBrains Mono",monospace;text-anchor:middle}
-          .wire{fill:none;stroke:url(#gl);stroke-width:1.6;stroke-dasharray:5 5;opacity:.55;animation:dash 1.6s linear infinite}
-          @keyframes dash{to{stroke-dashoffset:-20}}
-        </style>
-      </defs>
-
-      <path id="p1" class="wire" d="M120 92 H210"/>
-      <path id="p2" class="wire" d="M330 92 H420"/>
-      <path id="p3" class="wire" d="M540 92 H630"/>
-      <path id="p4" class="wire" d="M480 122 V178 H630"/>
-      <path id="p5" class="wire" d="M270 122 V210 H450"/>
-
-      <rect class="bx" x="20"  y="64" width="100" height="56" rx="10"/>
-      <text class="lbl" x="70"  y="88">Client</text><text class="sm" x="70" y="105">HTTP · SDK</text>
-
-      <rect class="bx" x="210" y="64" width="120" height="56" rx="10" stroke="#7c5cff" filter="url(#gw)"/>
-      <text class="lbl" x="270" y="88">API Layer</text><text class="sm" x="270" y="105">REST · auth · validate</text>
-
-      <rect class="bx" x="420" y="64" width="120" height="56" rx="10"/>
-      <text class="lbl" x="480" y="88">Domain</text><text class="sm" x="480" y="105">rules · services</text>
-
-      <rect class="bx" x="630" y="64" width="120" height="56" rx="10" stroke="#22d3ee"/>
-      <text class="lbl" x="690" y="88">MySQL / PG</text><text class="sm" x="690" y="105">indexed · tuned</text>
-
-      <rect class="bx" x="630" y="150" width="120" height="56" rx="10" stroke="#f59e0b"/>
-      <text class="lbl" x="690" y="174">Redis</text><text class="sm" x="690" y="191">hot path cache</text>
-
-      <rect class="bx" x="770" y="64" width="110" height="56" rx="10"/>
-      <text class="lbl" x="825" y="88">Elastic</text><text class="sm" x="825" y="105">search · logs</text>
-      <path class="wire" d="M750 92 H770"/>
-
-      <rect class="bx" x="450" y="186" width="140" height="48" rx="10" stroke="#34d399"/>
-      <text class="lbl" x="520" y="207">Queue · Kafka</text><text class="sm" x="520" y="223">workers · retries</text>
-
-      <circle r="3.5" fill="#22d3ee"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#p1"/></animateMotion></circle>
-      <circle r="3.5" fill="#7c5cff"><animateMotion dur="2.4s" begin="0.5s" repeatCount="indefinite"><mpath href="#p2"/></animateMotion></circle>
-      <circle r="3.5" fill="#22d3ee"><animateMotion dur="2.4s" begin="1s" repeatCount="indefinite"><mpath href="#p3"/></animateMotion></circle>
-      <circle r="3.5" fill="#f59e0b"><animateMotion dur="3s" begin="1.2s" repeatCount="indefinite"><mpath href="#p4"/></animateMotion></circle>
-    </svg>
-  </div>
-
-  <div class="pipe-note rv">
-    <div class="pn"><strong>Thin edges</strong><span>Controllers validate and delegate. Nothing clever at the boundary.</span></div>
-    <div class="pn"><strong>Cache before scale</strong><span>The cheapest query is the one you never send.</span></div>
-    <div class="pn"><strong>Push work off the request</strong><span>If the user doesn't need to wait, they shouldn't.</span></div>
-    <div class="pn"><strong>Abstract the driver</strong><span>Storage should be swappable, not welded to the domain.</span></div>
-  </div>
-</div></section>
-
-<!-- ================= JOURNEY ================= -->
-<section id="journey"><div class="wrap">
-  <p class="eyebrow rv">the road so far</p>
-  <h2 class="rv">Ten years, five domains,<br>one constant: shipping.</h2>
-  <p class="lead rv">Different industries, same underlying job — take something that's slow, tangled or doesn't exist yet, and make it fast, clear and live.</p>
-
-  <div class="tline">
-    <div class="tnode rv">
-      <div class="tyear">2025 — PRESENT</div>
-      <h3>Backend Engineer · High-scale SaaS</h3>
-      <div class="tdomain">route optimization · distributed data</div>
-      <ul>
-        <li>REST APIs and microservices inside a large backend org</li>
-        <li>Designed a driver-agnostic query abstraction adopted as a core internal tool</li>
-        <li>High-load data layer: full-text search, distributed stores, aggressive caching</li>
-      </ul>
-    </div>
-    <div class="tnode rv">
-      <div class="tyear">2021 — 2024</div>
-      <h3>PHP Team Lead &amp; Backend Engineer</h3>
-      <div class="tdomain">saas platforms · crm · e-commerce</div>
-      <ul>
-        <li>Led a team of 5 — planning, review standards, unblocking people</li>
-        <li>Architected core modules of a platform serving 1,000+ daily users</li>
-        <li>Cut a critical operational workflow down by ~40% fewer steps</li>
-        <li>Refactored legacy code so features could ship in parallel again</li>
-      </ul>
-    </div>
-    <div class="tnode rv">
-      <div class="tyear">2019 — 2021</div>
-      <h3>Senior Full-Stack Engineer</h3>
-      <div class="tdomain">logistics · real-time systems</div>
-      <ul>
-        <li>Real-time routing engine: optimal paths and cost across jurisdictions</li>
-        <li>Document management + in-app chat for high-throughput operators</li>
-        <li>Low-latency infrastructure under heavy concurrent sessions</li>
-      </ul>
-    </div>
-    <div class="tnode rv">
-      <div class="tyear">2017 — 2019</div>
-      <h3>Senior Software Engineer · Product Studio</h3>
-      <div class="tdomain">startup mvps · us &amp; uk clients</div>
-      <ul>
-        <li>3+ MVPs from zero to production in under 6 months each</li>
-        <li>Real-time chat and WebRTC video across multiple products</li>
-        <li>Serverless-leaning AWS architecture for cost-efficient scale</li>
-        <li>Built an AR indoor navigation system on beacon triangulation</li>
-        <li>Mentored mid-level engineers and tied work to roadmap milestones</li>
-      </ul>
-    </div>
-    <div class="tnode rv">
-      <div class="tyear">2017</div>
-      <h3>PHP Developer · Telecom</h3>
-      <div class="tdomain">75+ countries · 24/7 sla</div>
-      <ul>
-        <li>Tuned queries on tables processing up to a billion rows per day</li>
-        <li>Parsed and adapted network traffic to 10+ operator protocols</li>
-        <li>On-call incident response under real SLA pressure</li>
-      </ul>
-    </div>
-    <div class="tnode rv">
-      <div class="tyear">2014 — 2017</div>
-      <h3>The foundation</h3>
-      <div class="tdomain">php · mysql · learning fast</div>
-      <ul>
-        <li>Junior → independent feature ownership on client web products</li>
-        <li>BSc Information Technology · College of IT, Chisinau</li>
-      </ul>
+  <div class="wrap">
+    <div class="stats rv">
+      <div class="stat"><b>12</b><span>years building backends</span></div>
+      <div class="stat"><b>1B</b><span>rows per day, peak load optimized</span></div>
+      <div class="stat"><b>5</b><span>engineers led as Team Lead</span></div>
+      <div class="stat"><b>3+</b><span>startup MVPs shipped</span></div>
     </div>
   </div>
-</div></section>
 
-<!-- ================= PRINCIPLES ================= -->
-<section id="principles"><div class="wrap">
-  <p class="eyebrow rv">operating manual</p>
-  <h2 class="rv">What I'm like to work with.</h2>
-  <p class="lead rv">The technical stuff is learnable. This part is what actually decides whether a project lands.</p>
-  <div class="how">
-    <div class="principle rv"><div class="num">01</div><h3>Boring in production is the goal</h3><p>Clever code is a liability at 3am. I optimize for the version a tired teammate can read and change safely six months from now.</p></div>
-    <div class="principle rv"><div class="num">02</div><h3>Measure, then touch</h3><p>"It feels slow" isn't a diagnosis. Profile, find the actual query, fix that one thing. Most 10x wins are one index and one N+1.</p></div>
-    <div class="principle rv"><div class="num">03</div><h3>Legacy isn't the enemy</h3><p>It's revenue that already works. I refactor in seams, behind tests, without a rewrite that stops the roadmap for a quarter.</p></div>
-    <div class="principle rv"><div class="num">04</div><h3>Async-first communication</h3><p>Years of remote work with distributed teams. Written clarity, small PRs, decisions in the open — no one has to be in the same timezone to move.</p></div>
-    <div class="principle rv"><div class="num">05</div><h3>Reviews are teaching, not gatekeeping</h3><p>Leading a team taught me the review is where standards actually get set. I explain the why, and I'm happy to be the one corrected.</p></div>
-    <div class="principle rv"><div class="num">06</div><h3>AI is a power tool, not a pilot</h3><p>I use agentic tooling daily to move faster on scaffolding, tests and refactors — and I still read every line before it merges.</p></div>
-  </div>
-</div></section>
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="wrap">
+      <p class="kicker">Experience</p>
+      <h2 class="rv">Twelve years, five domains,<br>one constant: shipping.</h2>
+      <p class="sub rv">Different industries, same job: take something slow, tangled or not built yet, and make it fast, clear and live.</p>
 
-<!-- ================= LANGUAGES ================= -->
-<section style="padding-top:0"><div class="wrap">
-  <p class="eyebrow rv">also fluent in</p>
-  <h2 class="rv" style="margin-bottom:40px">Human protocols.</h2>
-  <div class="langs" id="langs">
-    <div class="lang rv"><div class="lname">Romanian <span class="lvl">NATIVE</span></div><div class="bar"><i data-w="100"></i></div></div>
-    <div class="lang rv"><div class="lname">Russian <span class="lvl">C2</span></div><div class="bar"><i data-w="96"></i></div></div>
-    <div class="lang rv"><div class="lname">English <span class="lvl">B2</span></div><div class="bar"><i data-w="72"></i></div></div>
-    <div class="lang rv"><div class="lname">Italian <span class="lvl">A1</span></div><div class="bar"><i data-w="22"></i></div></div>
-  </div>
-</div></section>
+      <article class="job rv">
+        <div class="job-meta">
+          <div class="job-date">01/2025 – 09/2026</div>
+          <div class="job-co">Route4Me</div>
+          <div>Remote</div>
+        </div>
+        <div>
+          <h3>Backend Laravel Developer</h3>
+          <p class="job-about">SaaS route optimization platform, 150+ employees worldwide</p>
+          <ul>
+            <li>Designed and shipped a <strong>driver-agnostic query builder library</strong> (MySQL, Elasticsearch, custom drivers), adopted across the team as a core internal tool.</li>
+            <li>Built REST APIs and microservices on top of Elasticsearch, Redis, Google Cloud Datastore and Google Spanner.</li>
+            <li>Worked in an <strong>8-person backend team</strong> on a high-scale route optimization product.</li>
+            <li>Covered new features with PHPUnit tests following TDD and containerized services in Docker.</li>
+          </ul>
+          <ul class="chips" aria-label="Stack">
+            <li>PHP 8.x</li><li>Laravel</li><li>MySQL</li><li>PostgreSQL</li><li>Elasticsearch</li><li>Redis</li><li>Google Spanner</li><li>Cloud Datastore</li><li>RabbitMQ</li><li>Docker</li><li>Kubernetes</li><li>GCP</li><li>GitHub Actions</li><li>PHPUnit</li>
+          </ul>
+        </div>
+      </article>
 
-<!-- ================= CONTACT ================= -->
-<section id="contact"><div class="wrap">
-  <div class="cta-box rv">
-    <p class="eyebrow" style="text-align:center">available now</p>
-    <h2>Got something heavy<br>that needs to get fast?</h2>
-    <p>Backend architecture, performance rescue, API design, or leading a team through it — happy to talk. Remote, async-friendly, based in Chisinau (EET).</p>
-    <div class="links">
-      <a class="btn p" href="mailto:octavian.vacarciuc@gmail.com">✉&nbsp; octavian.vacarciuc@gmail.com</a>
-      <a class="btn s" href="https://t.me/MalckolMD" target="_blank" rel="noopener">✈&nbsp; @MalckolMD</a>
-      <a class="btn s" href="https://linkedin.com/in/octavian-vacarciuc" target="_blank" rel="noopener">in&nbsp; LinkedIn</a>
+      <article class="job rv">
+        <div class="job-meta">
+          <div class="job-date">03/2021 – 11/2024</div>
+          <div class="job-co">WebRocks</div>
+          <div>Chisinau, Moldova</div>
+        </div>
+        <div>
+          <h3>PHP Team Lead &amp; Backend Engineer</h3>
+          <p class="job-about">Outsourcing company, HQ in the Netherlands</p>
+          <ul>
+            <li>Led a <strong>backend team of 5</strong>, reducing sprint blockers by ~50% through weekly planning, retrospectives and proactive cross-team coordination.</li>
+            <li>Architected core features of an <strong>academic SaaS platform</strong> with 1,000+ users: scheduling, messaging, timetables and task tracking.</li>
+            <li>Upgraded a Dutch salon-chain CRM with cashier workflows, <strong>cutting transaction steps by 40%</strong>.</li>
+            <li>Refactored an e-commerce codebase, improving response times by ~30% and introducing standardized code reviews.</li>
+          </ul>
+          <ul class="chips" aria-label="Stack">
+            <li>PHP</li><li>Laravel</li><li>Vue.js</li><li>Node.js</li><li>MySQL</li><li>PostgreSQL</li><li>Redis</li><li>Memcached</li><li>RabbitMQ</li><li>Docker</li><li>AWS</li><li>GitHub Actions</li><li>WebSockets</li><li>PHPUnit</li><li>Sentry</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="job rv">
+        <div class="job-meta">
+          <div class="job-date">06/2019 – 02/2021</div>
+          <div class="job-co">WorkIT / Dispatch42</div>
+          <div>Chisinau, Moldova</div>
+        </div>
+        <div>
+          <h3>Senior Full-Stack Engineer</h3>
+          <p class="job-about">Logistics technology</p>
+          <ul>
+            <li>Built a <strong>real-time route calculation engine</strong> for freight dispatchers: optimal routes and toll costs across multiple jurisdictions.</li>
+            <li>Developed document management and in-app chat for high-throughput dispatcher workflows.</li>
+            <li>Delivered infrastructure handling concurrent dispatcher sessions with low-latency data retrieval.</li>
+          </ul>
+          <ul class="chips" aria-label="Stack">
+            <li>PHP</li><li>Laravel</li><li>Vue.js</li><li>Node.js</li><li>MySQL</li><li>Redis</li><li>RabbitMQ</li><li>Docker</li><li>AWS</li><li>WebSockets</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="job rv">
+        <div class="job-meta">
+          <div class="job-date">10/2017 – 05/2019</div>
+          <div class="job-co">Ideaction.io</div>
+          <div>Chisinau, Moldova</div>
+        </div>
+        <div>
+          <h3>Senior Software Engineer</h3>
+          <p class="job-about">Outsourcing company, US and UK clients</p>
+          <ul>
+            <li>Delivered <strong>3+ startup MVPs</strong> from zero to production in under 6 months each, working directly with US and UK product owners.</li>
+            <li>Implemented real-time 1:1 and group chat over WebSockets and WebRTC video calling across multiple products.</li>
+            <li>Built an <strong>AR indoor navigation system</strong> on Bluetooth beacon triangulation, a key product differentiator.</li>
+            <li>Integrated AWS (EC2, S3, API Gateway, Lambda) into a cost-efficient backend architecture.</li>
+            <li>Managed and mentored 2 mid-level mobile developers (Android/iOS).</li>
+          </ul>
+          <ul class="chips" aria-label="Stack">
+            <li>PHP</li><li>Laravel</li><li>Vue.js</li><li>Node.js</li><li>Python</li><li>MySQL</li><li>PostgreSQL</li><li>Redis</li><li>RabbitMQ</li><li>Docker</li><li>Nginx</li><li>AWS</li><li>WebSockets</li><li>WebRTC</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="job rv">
+        <div class="job-meta">
+          <div class="job-date">10/2016 – 09/2017</div>
+          <div class="job-co">Unifun</div>
+          <div>Chisinau, Moldova</div>
+        </div>
+        <div>
+          <h3>Mid-level PHP Developer</h3>
+          <p class="job-about">Telecom solutions, 75+ countries</p>
+          <ul>
+            <li>Optimized query performance for tables processing <strong>up to 1 billion rows per day</strong> in a high-load telecom environment.</li>
+            <li>Parsed and adapted mobile network traffic (tShark, Wireshark) to operator protocols across 10+ markets.</li>
+            <li>Provided 24/7 on-call incident response, resolving system overloads under SLA pressure.</li>
+          </ul>
+          <ul class="chips" aria-label="Stack">
+            <li>PHP</li><li>Go</li><li>MySQL</li><li>PostgreSQL</li><li>Redis</li><li>Memcached</li><li>RabbitMQ</li><li>Linux</li><li>Bash</li><li>tShark</li><li>Wireshark</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="job compact rv">
+        <div class="job-meta">
+          <div class="job-date">06/2015 – 09/2016</div>
+          <div class="job-co">Titanium Software</div>
+          <div>Chisinau, Moldova</div>
+        </div>
+        <div>
+          <h3>Junior Software Engineer</h3>
+          <ul class="chips" aria-label="Stack"><li>PHP</li><li>Laravel</li><li>JavaScript</li><li>MySQL</li></ul>
+        </div>
+      </article>
+
+      <article class="job compact rv">
+        <div class="job-meta">
+          <div class="job-date">03/2014 – 05/2015</div>
+          <div class="job-co">EBS Integrator</div>
+          <div>Chisinau, Moldova</div>
+        </div>
+        <div>
+          <h3>Junior Software Engineer</h3>
+          <ul class="chips" aria-label="Stack"><li>PHP</li><li>Laravel</li><li>JavaScript</li><li>MySQL</li></ul>
+        </div>
+      </article>
     </div>
+  </section>
 
-    <div class="dl">
-      <span class="dl-lbl">Or take the résumé with you</span>
-      <div class="dl-row">
-        <a class="dl-btn" href="cv/Octavian-Vacarciuc-CV.pdf" download>
-          <span class="dl-ic">PDF</span>
-          <span class="dl-txt"><strong>Download CV</strong><em>formatted · 244 KB</em></span>
-          <span class="dl-arr">↓</span>
-        </a>
-        <a class="dl-btn" href="cv/Octavian-Vacarciuc-CV.txt" download>
-          <span class="dl-ic txt">TXT</span>
-          <span class="dl-txt"><strong>Download CV</strong><em>plain text · 4 KB</em></span>
-          <span class="dl-arr">↓</span>
-        </a>
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="wrap">
+      <p class="kicker">Skills</p>
+      <h2 class="rv">Tools I reach for<br>without thinking.</h2>
+      <p class="sub rv">Grouped by the job they do, not as a logo wall.</p>
+      <div class="skills">
+        <div class="skill-card rv">
+          <h3>Core runtime</h3>
+          <ul class="chips"><li>PHP 8.x</li><li>Laravel</li><li>Eloquent ORM</li><li>Laravel Queues</li><li>Sanctum</li><li>Passport</li><li>Horizon</li><li>Telescope</li><li>Go</li><li>Python 3</li><li>Node.js</li></ul>
+        </div>
+        <div class="skill-card rv">
+          <h3>Data, search &amp; cache</h3>
+          <ul class="chips"><li>MySQL</li><li>PostgreSQL</li><li>Elasticsearch</li><li>Redis</li><li>Memcached</li><li>Google Spanner</li><li>Cloud Datastore</li></ul>
+        </div>
+        <div class="skill-card rv">
+          <h3>Messaging &amp; real-time</h3>
+          <ul class="chips"><li>RabbitMQ</li><li>Kafka</li><li>WebSockets</li><li>WebRTC</li><li>Event-driven</li><li>CQRS</li></ul>
+        </div>
+        <div class="skill-card rv">
+          <h3>Cloud &amp; delivery</h3>
+          <ul class="chips"><li>Docker</li><li>Kubernetes</li><li>AWS</li><li>GCP</li><li>Nginx</li><li>Linux</li><li>Bash</li><li>GitHub Actions</li><li>GitLab CI</li></ul>
+        </div>
+        <div class="skill-card rv">
+          <h3>APIs &amp; quality</h3>
+          <ul class="chips"><li>REST</li><li>OpenAPI</li><li>OAuth2</li><li>JWT</li><li>Webhooks</li><li>PHPUnit</li><li>TDD</li><li>PHPStan</li><li>Composer</li><li>PSR</li></ul>
+        </div>
+        <div class="skill-card rv">
+          <h3>Observability</h3>
+          <ul class="chips"><li>Prometheus</li><li>Grafana</li><li>Sentry</li><li>ELK Stack</li><li>tShark</li><li>Wireshark</li></ul>
+        </div>
+        <div class="skill-card rv">
+          <h3>Architecture</h3>
+          <ul class="chips"><li>Microservices</li><li>SOLID</li><li>DDD</li><li>Abstraction layers</li></ul>
+        </div>
+        <div class="skill-card rv">
+          <h3>Leading</h3>
+          <ul class="chips"><li>Team lead</li><li>Code review</li><li>Agile / Scrum</li><li>Mentoring</li><li>Async-first</li></ul>
+        </div>
+        <div class="skill-card rv">
+          <h3>AI-assisted development</h3>
+          <ul class="chips"><li>Claude Code</li><li>Codex</li><li>OpenCode</li><li>Ollama</li><li>Local LLMs</li></ul>
+        </div>
       </div>
     </div>
+  </section>
+
+  <!-- APPROACH -->
+  <section id="approach">
+    <div class="wrap">
+      <p class="kicker">Approach</p>
+      <h2 class="rv">What I'm like to work with.</h2>
+      <p class="sub rv">Six habits that have held up across every team and codebase so far.</p>
+      <div class="principles">
+        <div class="principle rv"><h3>Boring in production is the goal</h3><p>Clever code is a liability at 3am. I optimize for the version a tired teammate can read and change safely six months from now.</p></div>
+        <div class="principle rv"><h3>Measure, then touch</h3><p>"It feels slow" isn't a diagnosis. Profile, find the actual query, fix that one thing. Most big wins are one index and one N+1.</p></div>
+        <div class="principle rv"><h3>Legacy isn't the enemy</h3><p>It's revenue that already works. I refactor in seams, behind tests, without a rewrite that stops the roadmap for a quarter.</p></div>
+        <div class="principle rv"><h3>Async-first communication</h3><p>Years of remote work with distributed teams. Written clarity, small PRs, decisions in the open — nobody has to share a timezone to move.</p></div>
+        <div class="principle rv"><h3>Reviews are teaching, not gatekeeping</h3><p>Leading a team taught me the review is where standards actually get set. I explain the why, and I'm happy to be the one corrected.</p></div>
+        <div class="principle rv"><h3>AI is a power tool, not a pilot</h3><p>I use agentic tooling daily to move faster on scaffolding, tests and refactors — and I still read every line before it merges.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <p class="kicker">About</p>
+      <h2 class="rv">Beyond the code.</h2>
+      <div class="about">
+        <div class="panel rv">
+          <h3>Education</h3>
+          <p><b>Bachelor of Information Technology</b><small>UPSC, Chisinau · 2014 – 2017</small></p>
+          <p><b>College of Information Technology</b><small>CEITI, Chisinau · 2010 – 2014</small></p>
+        </div>
+        <div class="panel rv">
+          <h3>Languages</h3>
+          <div class="lang"><span>Romanian</span><span class="level" aria-label="Native"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><em>Native</em></span></div>
+          <div class="lang"><span>Russian</span><span class="level" aria-label="C2"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><em>C2</em></span></div>
+          <div class="lang"><span>English</span><span class="level" aria-label="B2"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><em>B2</em></span></div>
+          <div class="lang"><span>Italian</span><span class="level" aria-label="A1"><i class="on"></i><i></i><i></i><i></i><i></i><em>A1</em></span></div>
+        </div>
+        <div class="panel rv">
+          <h3>Off the clock</h3>
+          <p>Travel, fishing, BBQ and cooking — and 3D printing, which is basically debugging you can hold in your hand.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact rv">
+        <p class="kicker" style="color:inherit;opacity:.7">Contact</p>
+        <h2>Got something heavy that needs to get fast?</h2>
+        <p>I'm looking for a Senior Backend or Team Lead role in a product or SaaS team. Email is the fastest way to reach me.</p>
+        <div class="cta">
+          <a class="btn primary" href="mailto:octavian.vacarciuc@gmail.com">octavian.vacarciuc@gmail.com</a>
+          <a class="btn" href="https://linkedin.com/in/octavian-vacarciuc" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="https://t.me/MalckolMD" target="_blank" rel="noopener">Telegram @MalckolMD</a>
+          <a class="btn" href="cv/Octavian-Vacarciuc-CV.pdf" download>CV (PDF)</a>
+          <a class="btn" href="cv/Octavian-Vacarciuc-CV.txt" download>CV (TXT)</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr">2026</span> Octavian Vacarciuc · Chisinau, Moldova</span>
+    <span>One HTML file, no framework · <a href="https://github.com/VOctavian/VOctavian.github.io">source</a></span>
   </div>
-  <footer><div class="foot">
-    <span>© <span id="yr"></span> Octavian Vacarciuc — Chisinau, Moldova</span>
-    <span>built with too much coffee and a dark theme</span>
-  </div></footer>
-</div></section>
+</footer>
 
 <script>
-(function(){
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+(function () {
+  var root = document.documentElement;
+
   document.getElementById('yr').textContent = new Date().getFullYear();
 
-  /* ---- nav shadow ---- */
-  const nav = document.getElementById('nav');
-  addEventListener('scroll', () => nav.classList.toggle('on', scrollY > 20), {passive:true});
+  document.getElementById('theme').addEventListener('click', function () {
+    var dark = root.dataset.theme
+      ? root.dataset.theme === 'dark'
+      : window.matchMedia('(prefers-color-scheme: dark)').matches;
+    root.dataset.theme = dark ? 'light' : 'dark';
+    try { localStorage.setItem('theme', root.dataset.theme); } catch (e) {}
+  });
 
-  /* ---- cursor glow ---- */
-  const glow = document.getElementById('glow');
-  if(!reduce && matchMedia('(pointer:fine)').matches){
-    let tx=0,ty=0,cx=0,cy=0;
-    addEventListener('mousemove', e => { tx=e.clientX; ty=e.clientY; });
-    (function loop(){ cx+=(tx-cx)*.08; cy+=(ty-cy)*.08;
-      glow.style.transform=`translate(${cx}px,${cy}px) translate(-50%,-50%)`; requestAnimationFrame(loop); })();
-  } else { glow.style.display='none'; }
+  var nav = document.getElementById('nav');
+  var onScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 8); };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 
-  /* ---- role typewriter ---- */
-  const roles = [
-    'Senior PHP Engineer',
-    'Backend Architect',
-    'Team Lead (up to 8 engineers)',
-    'Laravel & PHP 8 specialist',
-    'Performance troubleshooter',
-    'Remote-first, async-native'
-  ];
-  const el = document.getElementById('role');
-  const cur = document.createElement('span'); cur.className='cursor'; cur.innerHTML='&nbsp;';
-  let ri=0, ci=0, del=false;
-  function type(){
-    const w = roles[ri];
-    ci += del ? -1 : 1;
-    el.textContent = w.slice(0,ci);
-    el.appendChild(cur);
-    let d = del ? 34 : 62;
-    if(!del && ci === w.length){ d = 1700; del = true; }
-    else if(del && ci === 0){ del = false; ri = (ri+1)%roles.length; d = 320; }
-    setTimeout(type, d);
+  var items = document.querySelectorAll('.rv');
+  if (!('IntersectionObserver' in window)) {
+    items.forEach(function (el) { el.classList.add('in'); });
+    return;
   }
-  if(reduce){ el.textContent = roles[0]; } else { type(); }
-
-  /* ---- terminal ---- */
-  const lines = [
-    '<span class="c-cm">// who is this guy</span>',
-    '<span class="c-var">$engineer</span> = <span class="c-fn">new</span> <span class="c-key">Engineer</span>([',
-    '&nbsp;&nbsp;<span class="c-str">\'name\'</span>      => <span class="c-str">\'Octavian Vacarciuc\'</span>,',
-    '&nbsp;&nbsp;<span class="c-str">\'role\'</span>      => <span class="c-str">\'Senior PHP Engineer / Lead\'</span>,',
-    '&nbsp;&nbsp;<span class="c-str">\'years\'</span>     => <span class="c-num">10</span>,',
-    '&nbsp;&nbsp;<span class="c-str">\'stack\'</span>     => [<span class="c-str">\'PHP 8\'</span>, <span class="c-str">\'Laravel\'</span>, <span class="c-str">\'MySQL\'</span>,',
-    '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-str">\'Elasticsearch\'</span>, <span class="c-str">\'Redis\'</span>, <span class="c-str">\'Kafka\'</span>],',
-    '&nbsp;&nbsp;<span class="c-str">\'telegram\'</span>  => <span class="c-str">\'@MalckolMD\'</span>,',
-    '&nbsp;&nbsp;<span class="c-str">\'remote\'</span>    => <span class="c-key">true</span>,',
-    ']);',
-    '',
-    '<span class="c-var">$engineer</span>-><span class="c-fn">scale</span>(<span class="c-str">\'legacy monolith\'</span>)',
-    '&nbsp;&nbsp;-><span class="c-fn">profile</span>()-><span class="c-fn">index</span>()-><span class="c-fn">cache</span>()',
-    '&nbsp;&nbsp;-><span class="c-fn">ship</span>();',
-    '',
-    '<span class="c-cm">=> ✔ p95 down. team unblocked. sleep restored.</span>'
-  ];
-  const body = document.getElementById('termBody');
-  let li = 0;
-  function nextLine(){
-    if(li >= lines.length) return;
-    const d = document.createElement('div');
-    d.className = 'ln';
-    d.innerHTML = lines[li] || '&nbsp;';
-    body.appendChild(d);
-    li++;
-    setTimeout(nextLine, lines[li-1] === '' ? 90 : 170);
-  }
-  if(reduce){ body.innerHTML = lines.map(l => '<div>'+(l||'&nbsp;')+'</div>').join(''); }
-  else { setTimeout(nextLine, 700); }
-
-  /* ---- reveal + counters + bars ---- */
-  const io = new IntersectionObserver(es => {
-    es.forEach(e => {
-      if(!e.isIntersecting) return;
-      e.target.classList.add('in');
-      io.unobserve(e.target);
-      if(e.target.id === 'stats') e.target.querySelectorAll('.n').forEach(count);
-      if(e.target.classList.contains('lang'))
-        e.target.querySelectorAll('.bar i').forEach(b => setTimeout(()=> b.style.width = b.dataset.w+'%', 180));
+  var reveal = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); reveal.unobserve(e.target); }
     });
-  }, {threshold:.18, rootMargin:'0px 0px -40px 0px'});
-  document.querySelectorAll('.rv').forEach(n => io.observe(n));
+  }, { rootMargin: '0px 0px -40px 0px' });
+  items.forEach(function (el) { reveal.observe(el); });
 
-  function count(n){
-    const to = +n.dataset.to, pre = n.dataset.prefix || '', suf = n.dataset.suffix || '';
-    const dur = 1300, t0 = performance.now();
-    (function step(t){
-      const p = Math.min((t-t0)/dur, 1);
-      const e = 1 - Math.pow(1-p, 3);
-      n.textContent = pre + Math.round(to*e) + suf;
-      if(p < 1) requestAnimationFrame(step);
-    })(t0);
-  }
-
-  /* ---- particle field ---- */
-  const cv = document.getElementById('spark'), ctx = cv.getContext('2d');
-  let W, H, pts = [];
-  function init(){
-    W = cv.width = innerWidth; H = cv.height = innerHeight;
-    const n = Math.min(70, Math.round(W*H/26000));
-    pts = Array.from({length:n}, () => ({
-      x: Math.random()*W, y: Math.random()*H,
-      vx: (Math.random()-.5)*.22, vy: (Math.random()-.5)*.22,
-      r: Math.random()*1.5+.4
-    }));
-  }
-  function draw(){
-    ctx.clearRect(0,0,W,H);
-    for(const p of pts){
-      p.x += p.vx; p.y += p.vy;
-      if(p.x < 0 || p.x > W) p.vx *= -1;
-      if(p.y < 0 || p.y > H) p.vy *= -1;
-      ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.283);
-      ctx.fillStyle = 'rgba(160,175,255,.42)'; ctx.fill();
-    }
-    for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){
-      const dx = pts[i].x-pts[j].x, dy = pts[i].y-pts[j].y, d2 = dx*dx+dy*dy;
-      if(d2 < 18000){
-        ctx.beginPath(); ctx.moveTo(pts[i].x,pts[i].y); ctx.lineTo(pts[j].x,pts[j].y);
-        ctx.strokeStyle = 'rgba(124,92,255,'+(.16*(1-d2/18000))+')'; ctx.lineWidth = .7; ctx.stroke();
-      }
-    }
-    requestAnimationFrame(draw);
-  }
-  if(!reduce){ init(); draw(); addEventListener('resize', init); }
-  else { cv.style.display = 'none'; }
-
-  /* ---- easter egg ---- */
-  console.log('%cLooking under the hood? Good instinct.%c\nocta<vian.vacarciuc@gmail.com — let\'s build something fast.',
-    'color:#7c5cff;font:700 15px monospace','color:#8b91a7;font:13px monospace');
+  var links = document.querySelectorAll('.nav-links a');
+  var spy = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      links.forEach(function (a) { a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id); });
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  document.querySelectorAll('main section[id]').forEach(function (s) { spy.observe(s); });
 })();
 </script>
 </body>

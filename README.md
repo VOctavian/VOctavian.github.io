@@ -2,12 +2,12 @@
 
 Personal CV landing page — **[voctavian.github.io](https://voctavian.github.io)**
 
-Octavian Vacarciuc — Senior PHP Engineer & Team Lead, Chisinau, Moldova.
+Octavian Vacarciuc — Senior Backend Engineer (PHP, Laravel), Chisinau, Moldova. EU citizen.
 
 ## Stack
 
 None. It's a single `index.html` — no build step, no dependencies, no framework.
-Vanilla CSS and JS, one external request for Google Fonts (Inter + JetBrains Mono).
+Vanilla CSS and JS, one external request for Google Fonts (DM Serif Display, DM Sans, JetBrains Mono).
 
 ```
 index.html    the whole site (markup, styles, scripts)
@@ -24,9 +24,14 @@ python -m http.server 5173
 
 ## Notes
 
-- Fully responsive, verified at 1440px and 375px.
+- Light and dark themes: follows the system setting, with a toggle in the header.
+- Fully responsive, checked at 1440px and 375px.
 - Honours `prefers-reduced-motion` — all animation drops out, content stays readable.
-- Animations are CSS/SMIL plus a small canvas particle field; no libraries.
+- Includes Open Graph tags and schema.org `Person` data for search engines and link previews.
+
+## Previous version
+
+The pre-2026 design is kept under the tag `v1-before-redesign`.
 
 ## Contact
 
